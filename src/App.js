@@ -3,14 +3,17 @@ import './App.css';
 import AddAdvisor from './components/AddAdvisor';
 import SearchUser from './components/SearchUser';
 import ViewAdvisor from './components/ViewAdvisor';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <AddAdvisor/>
-      <SearchUser/>
-      <ViewAdvisor/>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<AddAdvisor/>}/>
+    <Route path='/search' element={<SearchUser/>}/>
+    <Route path='/view' element={<ViewAdvisor/>}/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
